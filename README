@@ -1,0 +1,48 @@
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the 'Software'), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+The Software shall be used for Good, not Evil.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+/**
+ * NitroProxy is a collection of classes and Custom Settings that allow easy setup and 
+ * administration of the Nitro for Salesforce (N4SF) package from Bunchball.  Usage and
+ * instructions provided assume installation, and basic familiarity with, said package.
+ *
+ * @author Jesse Endo (Twitter: @jesseendo)
+ * @version 0.1
+ */
+ 
+While N4SF provides some basic wrapping of the Nitro/Bunchball API via the NitroProxy class, I
+found that there were some other functions that would make the setup and use of the N4SF package
+easier.
+
+After setting up Actions in the N4SF Admin Console, you can utilize the code in this project to 
+dynamically iterate through a set of fields specified in a Custom Setting, and trigger the
+appropriate Nitro Action if a field is intitially populated (changes from a blank value to a non-
+blank one) or a checkbox flips from false to true.
+
+Further work may expand the use case of this package to include other types of field changes.
+
+1) Setup
+	- The Bunchball_Settings__c Custom Setting object has 3 fields:
+		Name: the API Name of the field you want to inspect
+		Object_Name__c: the name of the Object on which the field above is located
+		Nitro_Action_Name__c: the name of the Nitro Action you want triggered
+		
+2) Sample Trigger
+	A sample trigger is included for reference
